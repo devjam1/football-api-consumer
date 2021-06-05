@@ -47,16 +47,14 @@ function addMatchTile(data){
     matchTable.appendChild(matchtile);
 }
 //fetching the data
-fetch("https://api-football-beta.p.rapidapi.com/fixtures?live=all&date=2020-02-06", {
+fetch("https://api-football-beta.p.rapidapi.com/fixtures?live=all", {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-key": "HEnIhskMYzmshr4YLnYCCQuWO0AGp1nL8mLjsnHwd9VYSlyOvh",
 		"x-rapidapi-host": "api-football-beta.p.rapidapi.com"
 	}
 })
-.then( response => {
-	console.log(response);
-} /*{response.json().then(data => {
+.then( response => {response.json().then(data => {
     var matchesList = data['response'];
     var fixture = matchesList[0]['fixture'];
     var goals = matchesList[0]['goals'];
@@ -74,7 +72,7 @@ fetch("https://api-football-beta.p.rapidapi.com/fixtures?live=all&date=2020-02-0
        addMatchTile(matchesList[i]);
    }
 
-})}*/)
+})})
 .catch(err => {
     console.log(err);
 });
