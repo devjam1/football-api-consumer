@@ -47,7 +47,7 @@ function addMatchTile(data){
     matchTable.appendChild(matchtile);
 }
 //fetching the data
-fetch("https://api-football-beta.p.rapidapi.com/fixtures?rapidapi-key=&live=all&date=2020-02-06", {
+fetch("https://api-football-beta.p.rapidapi.com/fixtures?live=all&date=2020-02-06", {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-key": "HEnIhskMYzmshr4YLnYCCQuWO0AGp1nL8mLjsnHwd9VYSlyOvh",
