@@ -54,7 +54,7 @@ fetch("https://api-football-beta.p.rapidapi.com/fixtures?rapidapi-key=&live=all&
 		"x-rapidapi-host": "api-football-beta.p.rapidapi.com"
 	}
 })
-.then( response => response => {
+.then( response => {
 	console.log(response);
 } /*{response.json().then(data => {
     var matchesList = data['response'];
