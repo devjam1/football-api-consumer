@@ -5,21 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Map</title>
+    <title>Soccer Live Score</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.1.1/css/ol.css" type="text/css">
-    <style>
-        .map {
-            height: 400px;
-            width: 100%;
-        }
-    </style>
-    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.1.1/build/ol.js"></script>
-    <link rel="stylesheet" href="../assets/css/Style.css" />
+    <link rel="stylesheet" href="../css/Style.css" />
+
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body>
@@ -42,40 +35,48 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../src/live.html">LIVE 🔴</a>
+                            <a class="nav-link active" href="../html/live.html">LIVE 🔴</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../src/transfer.html">TRANSFERS</a>
+                            <a class="nav-link" href="../html/transfer.html">TRANSFERS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../src/team.html">TEAM</a>
+                            <a class="nav-link" href="../html/team.html">TEAM</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link active" href="../src/login.html">LOGIN</a>
+                            <a class="nav-link" href="../html/form.html">SIGN UP</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../html/login.html">LOGIN</a>
                         </li>
                     </ul>
                 </div>
             </nav>
         </div>
         <div class="container text-center">
-            <div class="render text-center">
-                <h1>Map</h1>
-                <div id="map" class="map"></div>
-                <script type="text/javascript">
-                    var map = new ol.Map({
-                        target: 'map',
-                        layers: [
-                            new ol.layer.Tile({
-                                source: new ol.source.OSM()
-                            })
-                        ],
-                        view: new ol.View({
-                            center: ol.proj.fromLonLat([37.41, 8.82]),
-                            zoom: 4
-                        })
-                    });
-                </script>
+            <div class="render">
+                <h1>ScoreBoard</h1>
+                <div class="title-box">
+                    <p>Local Team</p>
+                    <p id="elapsed">45'</p>
+                    <p>Visitor Team</p>
+                </div>
+                <div class="title-box">
+                    <div class="team">
+                        <img id="homeLogo">
+                        <p id="homeName">Team name</p>
+                    </div>
+                    <p id="goals">3 - 1</p>
+                    <div class="team">
+                        <img id="awayLogo">
+                        <p id="awayName">Team name</p>
+                    </div>
+                </div>
+                <hr>
+                <div id="matchTable" class="matches-table">
+
+                </div>
             </div>
         </div>
     </header>
@@ -129,6 +130,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+    <script src="../js/live.js"></script>
 </body>
 
 </html>

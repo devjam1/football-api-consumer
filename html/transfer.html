@@ -5,15 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Canvas</title>
+    <title>Soccer Live Score</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/css/Style.css" />
+    <link rel="stylesheet" href="../css/Style.css" />
+
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 
-<body onload="draw();">
+<body>
     <header>
         <div class="container-fluid p-0">
             <nav class="navbar navbar-expand-lg">
@@ -33,33 +35,52 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../src/live.html">LIVE 🔴</a>
+                            <a class="nav-link" href="../html/live.html">LIVE 🔴</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../src/transfer.html">TRANSFERS</a>
+                            <a class="nav-link active" href="../html/transfer.html">TRANSFERS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../src/team.html">TEAM</a>
+                            <a class="nav-link" href="../html/team.html">TEAM</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../src/form.html">SIGN UP</a>
+                            <a class="nav-link" href="../html/form.html">SIGN UP</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../src/login.html">LOGIN</a>
+                            <a class="nav-link" href="../html/login.html">LOGIN</a>
                         </li>
                     </ul>
                 </div>
             </nav>
         </div>
         <div class="container text-center">
-            <div class="render text-center">
-                <h1>Canvas</h1>
-                <br>
-                <canvas id="canvas" width="200" height="200"></canvas>
+            <div class="render">
+                <h1>Transfers</h1>
+                <div class="title-box">
+                    <p id="playerName"></p>
+                </div>
+                <div class="title-box">
+                    <div class="team">
+                        <img id="outLogo">
+                        <p id="outName">Team name</p>
+                    </div>
+
+                    <p id="dateTransfer">01/05/2021</p>
+                    <p id="typeTransfer">Loan</p>
+                    <p id="valueTransfer">$ 31M</p>
+
+                    <div class="team">
+                        <img id="inLogo">
+                        <p id="inName">Team name</p>
+                    </div>
+                </div>
+                <hr>
+                <div id="transferTable" class="matches-table">
+
+                </div>
             </div>
         </div>
-
     </header>
     <main>
 
@@ -111,45 +132,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+    <script src="../js/transfer.js"></script>
 </body>
-
-<script>
-    function draw() {
-
-        var canvas = document.getElementById('canvas');
-        var context = canvas.getContext('2d');
-        var centerX = canvas.width / 2;
-        var centerY = canvas.height / 2;
-        var radius = 70;
-        var eyeRadius = 10;
-        var eyeXOffset = 25;
-        var eyeYOffset = 20;
-
-        // draw the yellow circle
-        context.beginPath();
-        context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
-        context.fillStyle = 'yellow';
-        context.fill();
-        context.lineWidth = 5;
-        context.strokeStyle = 'black';
-        context.stroke();
-
-        // draw the eyes
-        context.beginPath();
-        var eyeX = centerX - eyeXOffset;
-        var eyeY = centerY - eyeXOffset;
-        context.arc(eyeX, eyeY, eyeRadius, 0, 2 * Math.PI, false);
-        var eyeX = centerX + eyeXOffset;
-        context.arc(eyeX, eyeY, eyeRadius, 0, 2 * Math.PI, false);
-        context.fillStyle = 'black';
-        context.fill();
-
-        // draw the mouth
-        context.beginPath();
-        context.arc(centerX, centerY, 50, 0, Math.PI, false);
-        context.stroke();
-
-    }
-</script>
 
 </html>
