@@ -1,12 +1,12 @@
-//getting the DOM elements
-var elapsedTime = document.querySelector("#elapsed");
-var homeTeamImage = document.querySelector("#homeLogo");
-var homeTeamName = document.querySelector("#homeName");
-var awayTeamImage = document.querySelector("#awayLogo");
-var awayTeamName = document.querySelector("#awayName");
-var lastMatchGoal = document.querySelector("#goals");
-var matchTable = document.querySelector("#matchTable");
-
+var teamName =    document.querySelector("#teamName");
+var teamCountry = document.querySelector("#teamCountry");
+var teamFounded = document.querySelector("#teamFounded");
+var teamLogo  =   document.querySelector("#teamLogo");
+var teamStadium = document.querySelector("#teamStadium");
+var stadAddress = document.querySelector("#stadAddress");
+var stadCity =    document.querySelector("#stadCity");
+var stadCapacity = document.querySelector("#stadCapacity");
+var stadImg = document.querySelector("#stadImg");
 
 //the functions to create an element
 function addMatchTile(data){
@@ -46,11 +46,34 @@ function addMatchTile(data){
 
     matchTable.appendChild(matchtile);
 }
+
+
+var response = '{"get":"teams","parameters":{"name":"AC Milan"},"errors":[],"results":1,"paging":{"current":1,"total":1},"response":[{"team":{"id":489,"name":"AC Milan","country":"Italy","founded":1899,"national":false,"logo":"https://media.api-sports.io/football/teams/489.png"},"venue":{"id":907,"name":"Stadio Giuseppe Meazza","address":"Via Piccolomini 5","city":"Milano","capacity":80018,"surface":"grass","image":"https://media.api-sports.io/football/venues/907.png"}}]}'
+
+function convert(response) {
+    var data = JSON.parse(response);
+    console.log(data);
+    var resp = data['response'];
+    var team = resp[0]['team'];
+    var venue = resp[0]['venue'];
+   //Now let's set our first match
+   teamName.innerHTML = team['name'];
+   teamCountry.innerHTML = team['country'];
+   teamFounded.innerHTML = team['founded'];
+   teamLogo.src = team['logo'];
+   teamStadium.innerHTML = venue['name'];
+   stadAddress.innerHTML = venue['address'];
+   stadCity.innerHTML = venue['city'];
+   stadCapacity.innerHTML = venue['capacity'];
+   stadImg.src= venue['image'];
+};
+
+convert(response);
 //fetching the data
-fetch("https://api-football-beta.p.rapidapi.com/fixtures?live=all", {
+/*fetch("https://api-football-beta.p.rapidapi.com/fixtures/lineups", {
 	"method": "GET",
 	"headers": {
-		"x-rapidapi-key": "HEnIhskMYzmshr4YLnYCCQuWO0AGp1nL8mLjsnHwd9VYSlyOvh",
+		"x-rapidapi-key": "9a6306bb0cmsh6aeab268b965874p12016bjsn2cd065f95fb2",
 		"x-rapidapi-host": "api-football-beta.p.rapidapi.com"
 	}
 })
@@ -75,4 +98,4 @@ fetch("https://api-football-beta.p.rapidapi.com/fixtures?live=all", {
 })})
 .catch(err => {
     console.log(err);
-});
+});*/

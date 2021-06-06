@@ -139,6 +139,22 @@ header {
 
 header .container .col-md-7 {
   font-family: "Rubik", sans-serif;
+  padding: 200px;
+  padding-right: 0px;
+  overflow: hidden;
+}
+
+header .container {
+  margin-left: auto;
+  max-width: 100% !important;
+}
+
+header .container .col-md-5 {
+  background-image: url("../img/hero-banner.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: right;
+  background-size: 800px;
 }
 
 header .container .col-md-7 h6 {

@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Image</title>
+    <title>Sign Up</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/Style.css" />
+    <link rel="stylesheet" href="../assets/css/login.css" />
 </head>
 
 <body>
-
     <header>
         <div class="container-fluid p-0">
             <nav class="navbar navbar-expand-lg">
@@ -37,7 +37,7 @@
                             <a class="nav-link" href="../src/live.html">LIVE 🔴</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="../src/transfer.html">TRANSFERS</a>
+                            <a class="nav-link" href="../src/transfer.html">TRANSFERS</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../src/team.html">TEAM</a>
@@ -47,17 +47,71 @@
                             <a class="nav-link" href="../src/form.html">SIGN UP</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../src/login.html">LOGIN</a>
+                            <a class="nav-link active" href="../src/login.html">LOGIN</a>
                         </li>
                     </ul>
                 </div>
             </nav>
         </div>
         <div class="container text-center">
-            <div class="render text-center">
-                <h1>Image</h1>
-                <img src="../assets/img/image_1.png" alt="image_1" height="auto" width="75%">
+            <div class="row">
+                <div class="col-md-7 col-sm-12 text-white">
+                    <h6>AUTHOR: AMOUZ & GUESSOUS</h6>
+                    <h1>Footards Assembly</h1>
+                    <p>
+                        This website was created with the intent of giving football fans arround the globe fresh
+                        information about the sport they love
+                        <br>
+                        <i><b>Footards Assembly</b></i>, one football site to rule them all.
+                    </p>
+                    <button class=" btn btn-light px-5 py-2 primary-btn">
+                        Enjoy !
+                    </button>
+
+
+                </div>
+                <div class="col-md-5 col-sm-12 text-white">
+
+                </div>
+
             </div>
+        </div>
+        <div class="container">
+
+            <div id="id01" style="display:block;" class="modal">
+
+                <form class="modal-content animate" action="#" method="post">
+                    <div class="imgcontainer">
+                        <a href="../index.html">
+                            <span class="close""
+                                title=" Close Modal">&times;</span>
+                        </a>
+                        <img src="../assets/img/avatar.jpg" width="100px" alt="Avatar" class="avatar">
+                    </div>
+
+                    <div class="container">
+                        <label for="uname"><b>Username</b></label>
+                        <input type="text" placeholder="Enter Username" name="uname" required>
+
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="psw" required>
+
+                        <button type="submit">Login</button>
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember"> Remember me
+                        </label>
+                    </div>
+
+                    <div class="container" style="background-color:#f1f1f1">
+                        <a href="../index.html">
+                            <button type="button" class=" cancelbtn">Cancel</button>
+                        </a>
+                        <span class="psw">Forgot <a href="#">password?</a></span>
+                    </div>
+                </form>
+            </div>
+
+
         </div>
     </header>
     <main>
